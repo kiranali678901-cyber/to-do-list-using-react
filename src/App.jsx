@@ -10,9 +10,9 @@ function App() {
   };
 
   const taskList = () => {
-    if(task==='' || details===''){
-      alert('please fill details');
-      return
+    if (task === "" || details === "") {
+      alert("please fill details");
+      return;
     }
     const newList = { task, details };
     setList([...list, newList]);
@@ -24,7 +24,7 @@ function App() {
   };
   return (
     <>
-      <div className="px-5 py-5 flex  gap-10">
+      <div className="px-5 py-5 lg:flex  gap-10">
         <form
           onSubmit={(e) => handleSubmit(e)}
           className="flex flex-col gap-5 w-lg"
@@ -51,12 +51,12 @@ function App() {
           ></textarea>
           <button
             onClick={taskList}
-            className="bg-black text-white rounded px-3 py-2 hover:scale-95"
+            className="bg-white text-black rounded px-3 py-2 hover:scale-95"
           >
             Submit
           </button>
         </form>
-        <div className="flex flex-wrap gap-5">
+        <div className="flex flex-wrap gap-5 mt-5 ">
           {list.map(function (elem, idx) {
             return (
               <div
@@ -69,8 +69,8 @@ function App() {
                 }}
               >
                 <div>
-                  <h2 className="font-black">{elem.task}</h2>
-                  <p>{elem.details}</p>
+                  <h2 className="font-black text-black">{elem.task}</h2>
+                  <p className="text-black">{elem.details}</p>
                 </div>
                 <button
                   onClick={() => {
